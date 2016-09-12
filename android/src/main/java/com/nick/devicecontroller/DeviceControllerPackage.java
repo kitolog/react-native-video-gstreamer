@@ -5,7 +5,7 @@ import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
-import android.app.Activity;
+import android.app.Application;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,16 +14,16 @@ import java.util.Collections;
 
 public class DeviceControllerPackage implements ReactPackage {
     private List<NativeModule> modules = null;
-    private Activity activity = null;
+    private Application application = null;
     
-    public DeviceControllerPackage(Activity activity) {
+    public DeviceControllerPackage(Application application) {
         super();
-        this.activity = activity;   
+        this.application = application;   
     }
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         modules = new ArrayList<>();
-        modules.add(new DeviceControllerModule(reactContext, activity));
+        modules.add(new DeviceControllerModule(reactContext, application));
         return modules;
     }
 
