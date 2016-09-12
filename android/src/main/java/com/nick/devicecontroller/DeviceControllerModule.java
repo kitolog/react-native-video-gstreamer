@@ -2,7 +2,7 @@ package com.nick.devicecontroller;
 
 import android.content.Context;
 import android.widget.Toast;
-import android.app.Activity;
+import android.app.Application;
 import android.content.pm.ActivityInfo;
 
 import com.facebook.react.bridge.NativeModule;
@@ -20,10 +20,10 @@ import java.util.List;
 public class DeviceControllerModule extends ReactContextBaseJavaModule {
 
     private Context mContext;
-    private Activity activity = null;
-    public DeviceControllerModule(ReactApplicationContext reactContext, Activity activity) {
+    private Application application = null;
+    public DeviceControllerModule(ReactApplicationContext reactContext, Application application) {
         super(reactContext);
-        this.activity = activity;
+        this.application = application;
     }
     
     @Override
@@ -33,7 +33,7 @@ public class DeviceControllerModule extends ReactContextBaseJavaModule {
     
     @ReactMethod
     public void setOrientation(int mode) {
-        activity.setRequestedOrientation(mode);
+        //activity.setRequestedOrientation(mode);
     }
     
 }
