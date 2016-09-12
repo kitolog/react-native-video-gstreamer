@@ -1,7 +1,16 @@
 'use strict';
 
-var React = require('react-native');
-var { requireNativeComponent, PropTypes, View } = React;
+import React from 'react';
+import ReactNative from 'react-native';
+
+const {
+  Component,
+  PropTypes
+} = React;
+
+const {
+  requireNativeComponent
+} = ReactNative;
 
 var NativeMediaPlayer = requireNativeComponent('MediaPlayerAndroidComponent', MediaPlayer);
 
