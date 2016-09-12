@@ -2,7 +2,6 @@ package com.nick.devicecontroller;
 
 import android.content.Context;
 import android.widget.Toast;
-import android.app.Application;
 import android.content.pm.ActivityInfo;
 
 import com.facebook.react.bridge.NativeModule;
@@ -20,10 +19,8 @@ import java.util.List;
 public class DeviceControllerModule extends ReactContextBaseJavaModule {
 
     private Context mContext;
-    private Application application = null;
-    public DeviceControllerModule(ReactApplicationContext reactContext, Application application) {
+    public DeviceControllerModule(ReactApplicationContext reactContext) {
         super(reactContext);
-        this.application = application;
     }
     
     @Override
